@@ -1,0 +1,30 @@
+
+<a href="/"><button type="button">Go to Home Page</button></a><br>
+
+<h2>Movie's Details</h2>
+
+<div>
+  <p> Movie Name: {{movie.title}}</p>
+  <p> Movie Genre: {{movie.genre}}</p>
+  <p> Movie Plot: {{movie.plot}}</p>
+
+  <h5>Casting </h5>
+
+  {{#each movie.cast}}
+    <ul>
+      <li><p>Cast Name: {{this.name}}</p></li>
+      <li><p>Occupation: {{this.occupation}}</p></li>
+      <li><p>Catch Phrase: {{this.catchPhrase}}</p></li>
+    </ul>
+  {{/each}}
+
+</div>
+<div>
+  <form action="/movies/{{movie._id}}/delete" method="POST">
+
+    <button type="submit">Delete Movie</button>
+
+  </form>
+</div><br />
+
+<a href="/movies/{{movie._id}}/edit"><button type="button">Update Movie</button></a>
